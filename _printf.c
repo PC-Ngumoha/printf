@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	va_list valist;
 
 	va_start(valist, format);
-	while (format[i] != '\0')
+	while ((format != NULL) && (format[i] != '\0'))
 	{
 		if (format[i] == '%')
 		{
