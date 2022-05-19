@@ -28,6 +28,11 @@ int _printf(const char *format, ...)
 					count++;
 					i++;
 					break;
+				case '%':
+					_putchar('%');
+					count++;
+					i++;
+					break;
 			}
 		}
 		else
