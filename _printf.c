@@ -47,7 +47,9 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[i]);
 			count++;
-		} i++;
+		} 
+		i++;
 	}
-	va_end(valist), return (count);
+	va_end(valist);
+	return (count);
 }
