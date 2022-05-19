@@ -33,3 +33,32 @@ And then we would compile it and run it to get the output:
 Name: Emeka
 ~$
 ```
+### _print_string.c
+Contains the function `_print_string` which takes a string character and prints it out to the screen
+
+### _print_number.c
+Contains the function `_print_number` which takes an integer number as argument and prints it out to the screen
+
+### _realloc_int.c
+Contains the function `_realloc_int` which takes three arguments; a pointer to the current memory location, and integer variable to be used as the size of the new memory to be allocated in memory and another integer variable to serve as the size of the currently allocated block of memory. When all these arguments are supplied to the function, it uses them to create a new allocation of memory and then returns a pointer to that new allocation.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+

@@ -33,6 +33,16 @@ int _printf(const char *format, ...)
 					count++;
 					i++;
 					break;
+				case 'd':
+					_print_decimal(va_arg(valist, int));
+					count++;
+					i++;
+					break;
+				case 'i':
+					_print_decimal(va_arg(valist, int));
+					count++;
+					i++;
+					break;
 				default:
 					break;
 			}
