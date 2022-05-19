@@ -34,10 +34,6 @@ int _printf(const char *format, ...)
 					i++;
 					break;
 				case 'd':
-					_print_decimal(va_arg(valist, int));
-					count++;
-					i++;
-					break;
 				case 'i':
 					_print_decimal(va_arg(valist, int));
 					count++;
@@ -51,9 +47,7 @@ int _printf(const char *format, ...)
 		{
 			_putchar(format[i]);
 			count++;
-		}
-		i++;
+		} i++;
 	}
-	va_end(valist);
-	return (count);
+	va_end(valist), return (count);
 }

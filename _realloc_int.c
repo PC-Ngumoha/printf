@@ -11,12 +11,12 @@
 int *_realloc_int(int *old_mem, int newsize, int oldsize)
 {
 	int *new_mem, i;
-	
+
 	if (old_mem == NULL)
 		return (NULL);
 
 	if (newsize < oldsize)
-		return old_mem;
+		return (old_mem);
 
 	new_mem = malloc(sizeof(int) * newsize);
 	if (new_mem == NULL)
