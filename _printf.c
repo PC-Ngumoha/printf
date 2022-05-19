@@ -33,6 +33,8 @@ int _printf(const char *format, ...)
 					count++;
 					i++;
 					break;
+				default:
+					break;
 			}
 		}
 		else
