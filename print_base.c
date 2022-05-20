@@ -61,7 +61,7 @@ int _print_octal(va_list valist)
 }
 
 /**
- * _print_unsigned
+ * _print_unsigned - prints unsigned intger numbers to the screen
  * @valist: valist parameter
  *
  * Return: str array
