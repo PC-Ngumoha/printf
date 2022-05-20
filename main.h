@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <limits.h>
+#include <unistd.h>
 
 /* identifiers struct */
 typedef struct identifiers
@@ -14,8 +15,9 @@ typedef struct identifiers
 } id;
 
 
-/* _putchar */
+/* Write functions*/
 int _putchar(char c);
+int _puts(char *str);
 
 
 /* _printf */
@@ -24,12 +26,14 @@ int _printf(const char *format, ...);
 /* Print character functions */
 int  _print_char(va_list);
 int  _print_str(va_list);
-int  _print_percent(va_list);
 
 /* Print numbers */
 int  _print_dec(va_list);
 
 /* Helper functions */
 void print_number(int n);
+
+/* Function Pointer Generator */
+int (*get_func(char c))(va_list);
 
 #endif /* MAIN_H_ */

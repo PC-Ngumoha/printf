@@ -10,21 +10,32 @@ int _printf(const char *format, ...)
 {
 	register int count = 0;
 	va_list args;
-	char *str;
+	const char *str;
 	int (*func)(va_list);
-	va_start(args, format);
 
+	va_start(args, format);
 	str = format;
 	while (*str)
 	{
 		if (*str == '%')
 		{
 			str++;
-			func = get_func(*str);
-			if (!func)
-
-			count += func(args);
-
+			if (*str == '%')
+			{
+				_putchar('%');
+				count++;
+			}
+			else
+			{
+				func = get_func(*str);
+				if (!func)
+				{
+					_putchar(*str);
+					count++;
+				}
+				else
+					count += func(args);
+			}	
 		}
 		else
 		{

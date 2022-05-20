@@ -1,5 +1,11 @@
 #include "main.h"
 
+/**
+ * get_func - returns the function to use based on an inputted char
+ * @c: char parameter
+ *
+ * Return: pointer to function
+ */
 int (*get_func(char c))(va_list)
 {
 	id char_ids[] = {
@@ -7,12 +13,11 @@ int (*get_func(char c))(va_list)
 		{'i', _print_dec},
 		{'s', _print_str},
 		{'c', _print_char},
-		{'%', _print_percent},
-		{NULL, NULL}
+		{'\0', NULL}
 	};
 	int i = 0;
 
-	while (char_ids[i].symbol != NULL)
+	while (char_ids[i].symbol != '\0')
 	{
 		if (char_ids[i].symbol == c)
 		{
