@@ -18,7 +18,7 @@ int _print_char(va_list valist)
  *
  * Return: void
  */
-void _print_str(va_list valist)
+int _print_str(va_list valist)
 {
 	char *str = va_arg(valist, char *);
 	if (!str)
@@ -37,7 +37,7 @@ void _print_str(va_list valist)
  *
  * Return: void
  */
-void _print_percent(va_list valist)
+int _print_percent(va_list valist)
 {
 	_putchar('%');
 	return (0);

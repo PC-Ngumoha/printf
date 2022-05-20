@@ -6,6 +6,14 @@
 #include <stdio.h>
 #include <limits.h>
 
+/* identifiers struct */
+typedef struct identifiers
+{
+	char symbol;
+	int (*func)(va_list);
+} id;
+
+
 /* _putchar */
 int _putchar(char c);
 
