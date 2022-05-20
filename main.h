@@ -35,7 +35,7 @@ int _print_binary(va_list);
 
 /* Helper functions */
 void print_number(int n);
-void print_unsigned(int i);
+char *convert(unsigned int num, int base);
 
 /* Function Pointer Generator */
 int (*get_func(char c))(va_list);
