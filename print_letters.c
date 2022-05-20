@@ -4,6 +4,7 @@
  * */
 void _print_character(va_list valist)
 {
+	_putchar(va_arg(valist, int));
 }
 
 /***/
