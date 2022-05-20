@@ -4,16 +4,17 @@
  * convert - converts a decimal number into any number base
  * @num: unsigned int parameter
  * @base: int parameter
+ * @lowercase: int parameter
  *
  * Return: ptr to beginning of string
  */
-char *convert(unsigned int num, int base)
+char *convert(unsigned int num, int base, int lowercase)
 {
 	static char buffer[40];
 	static char *ptr;
 	char *map;
 
-	map = "0123456789abcdef";
+	map = (lowercase) ? "0123456789abcdef" : "0123456789ABCDEF";
 	ptr = &buffer[39];
 	*ptr = '\0';
 
