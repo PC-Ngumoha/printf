@@ -14,6 +14,7 @@ int (*get_func(char c))(va_list)
 		{'s', _print_str},
 		{'c', _print_char},
 		{'b', _print_binary},
+		{'o', _print_octal},
 		{'\0', NULL}
 	};
 	int i = 0;

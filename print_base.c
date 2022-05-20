@@ -15,3 +15,13 @@ int _print_binary(va_list valist)
 	str = convert(num, base);
 	return (_puts(str));
 }
+
+int _print_octal(va_list valist)
+{
+	unsigned int num = va_arg(valist, unsigned int)
+	char *str;
+	int base = 8;
+
+	str = convert(num, base);
+	return (_puts(str));
+}	
