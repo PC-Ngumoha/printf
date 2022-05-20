@@ -14,11 +14,14 @@ int _putchar(char c);
 int _printf(const char *format, ...);
 
 /* Print character functions */
-void _print_character(va_list);
-void _print_string(va_list);
-void _print_percent(va_list);
+int  _print_char(va_list);
+int  _print_str(va_list);
+int  _print_percent(va_list);
 
 /* Print numbers */
-void _print_decimal(va_list);
+int  _print_dec(va_list);
+
+/* Helper functions */
+void print_number(int n);
 
 #endif /* MAIN_H_ */

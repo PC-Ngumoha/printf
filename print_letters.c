@@ -6,9 +6,10 @@
  * 
  * Return: void
  */
-void _print_char(va_list valist)
+int _print_char(va_list valist)
 {
 	_putchar(va_arg(valist, int));
+	return (0);
 }
 
 /**
@@ -21,12 +22,13 @@ void _print_str(va_list valist)
 {
 	char *str = va_arg(valist, char *);
 	if (!str)
-		return;
+		return (-1);
 	while (*str)
 	{
 		_putchar(*str);
 		str++;
 	}
+	return (0);
 }
 
 /**
@@ -38,4 +40,5 @@ void _print_str(va_list valist)
 void _print_percent(va_list valist)
 {
 	_putchar('%');
+	return (0);
 }
