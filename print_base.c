@@ -68,7 +68,7 @@ int _print_octal(va_list valist)
  */
 int _print_unsigned(va_list valist)
 {
-	unsigned int num = va_arg(valist, unsigned int)
+	unsigned int num = va_arg(valist, unsigned int);
 	char *str;
 
 	str = convert(num, 10, 1);
