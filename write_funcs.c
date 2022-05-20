@@ -16,7 +16,6 @@ int _putchar(char c)
 		write(1, &buffer, i);
 		i = 0;
 	}
-
 	if (c != -1)
 	{
 		buffer[i] = c;
