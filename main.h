@@ -30,8 +30,12 @@ int  _print_str(va_list);
 /* Print numbers */
 int  _print_dec(va_list);
 
+/* Print unsigned numbers */
+int _print_binary(va_list);
+
 /* Helper functions */
 void print_number(int n);
+void print_unsigned(int i);
 
 /* Function Pointer Generator */
 int (*get_func(char c))(va_list);
