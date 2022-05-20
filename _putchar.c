@@ -1,12 +1,12 @@
 #include <unistd.h>
 
 /**
- * _putchar - function to print a char
- * @c: argument
+ * _putchar - prints a character at a time to the screen
+ * @c: char parameter
  *
- * Return: Always 1 when successful, else -1.
+ * Return: -1 or 1
  */
 int _putchar(char c)
 {
-	return (write(1, &c, 1));
+	return (1, &c, 1);
 }
