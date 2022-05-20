@@ -9,9 +9,10 @@
 int _print_dec(va_list valist)
 {
 	int num = va_arg(valist, int);
+	int count = count_digits(num);
 
 	print_number(num);
-	return (0);
+	return (count);
 }
 
 
@@ -37,3 +38,24 @@ void print_number(int n)
 		print_number(n / 10);
 	_putchar('0' + temp);
 }
+
+
+/**
+ * count_digits - counts the number of digits in a number
+ * @n: integer parameter
+ *
+ * Return: number of digits
+ */
+int count_digits(int n)
+{
+	static int count;
+
+	n = n / 10;
+	count++;
+	if (n)
+	{
+		count_digits(n);
+	}
+	return (count);
+}
+

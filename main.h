@@ -39,6 +39,7 @@ int _print_unsigned(va_list);
 
 /* Helper functions */
 void print_number(int n);
+int count_digits(int n);
 char *convert(unsigned int num, int base, int lowercase);
 
 /* Function Pointer Generator */
