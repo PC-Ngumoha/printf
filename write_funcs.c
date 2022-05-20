@@ -10,7 +10,7 @@ int _putchar(char c)
 {
 	char buffer[1024];
 
-	return (write(1, &buffe, 1));
+	return (write(1, &buffer, 1));
 }
 
 
