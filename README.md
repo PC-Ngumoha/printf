@@ -8,7 +8,7 @@ ALX SE team project (Chukwuemeka Ngumoha, Chinazaekpere Nnaji) focused on implem
 This is the main header file which contains all of the function prototypes of the functions used in this project.
 
 ### _putchar.c
-This is the program file which contains the function `_putchar` for printing out characters to stdout.
+This is the program file which contains the function `_putchar` for printing out characters to stdout
 
 
 
