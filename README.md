@@ -10,7 +10,8 @@ This is the main header file which contains all of the function prototypes of th
 ### _putchar.c
 This is the program file which contains the function `_putchar` for printing out characters to stdout
 
-
+### _printf.c
+Contains the function `_printf` which takes a string parameter `format` and an unknown number of optional arguments and then it uses special conversion specifiers specified in the `format` string, in order to print out the contents of the other optional arguments.
 
 
 
