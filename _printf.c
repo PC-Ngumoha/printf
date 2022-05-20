@@ -8,4 +8,15 @@
  */
 int _printf(const char *format, ...)
 {
+	register int count;
+	va_list args;
+	char *str;
+	va_start(args, format);
+
+	str = format;
+	while (*str)
+	{
+	}
+	va_end(args);
+	return (count);
 }
