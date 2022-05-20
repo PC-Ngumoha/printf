@@ -27,16 +27,18 @@ int _printf(const char *format, ...);
 int  _print_char(va_list);
 int  _print_str(va_list);
 
-/* Print numbers */
+/* Print numbers in decimal */
 int  _print_dec(va_list);
 
-/* Print unsigned numbers */
+/* Print numbers in other bases */
 int _print_binary(va_list);
+int _print_hexa_upper(va_list);
+int _print_hexa_lower(va_list);
 int _print_octal(va_list);
 
 /* Helper functions */
 void print_number(int n);
-char *convert(unsigned int num, int base);
+char *convert(unsigned int num, int base, int lowercase);
 
 /* Function Pointer Generator */
 int (*get_func(char c))(va_list);
