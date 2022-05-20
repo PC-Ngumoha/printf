@@ -34,6 +34,7 @@ int  _print_dec(va_list);
 int _print_binary(va_list);
 int _print_hexa_upper(va_list);
 int _print_hexa_lower(va_list);
+int _print_octal(va_list);
 
 /* Helper functions */
 void print_number(int n);

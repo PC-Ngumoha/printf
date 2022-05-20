@@ -44,3 +44,18 @@ int _print_hexa_lower(va_list valist)
 	str = convert(num, 16, 1);
 	return (_puts(str));
 }
+
+/**
+ * _print_octal - prints numbers in octal format
+ * @valist: va_list parameter
+ *
+ * Return: length of number
+ */
+int _print_octal(va_list valist)
+{
+	unsigned int num = va_arg(valist, unsigned int);
+	char *str;
+
+	str = convert(num, 8, 1);
+	return (_puts(str));
+}	
