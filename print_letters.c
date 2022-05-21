@@ -28,6 +28,12 @@ int _print_str(va_list valist)
 	return (_puts(str));
 }
 
+/**
+ * _print_specifier - function to handle custom concersion specifier
+ * @valist: variable list of arguments
+ *
+ * Return: counts
+ */
 int _print_specifier(va_list valist)
 {
 	int i;
