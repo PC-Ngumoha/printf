@@ -49,7 +49,7 @@ int _print_specifier(va_list valist)
 
 	for (i = 0; str[i]; i++)
 	{
-		if (0 < str[i] && (str[i] < 32 || str[i] >= 127))
+		if (str[i] > 0 && (str[i] < 32 || str[i] >= 127))
 		{
 			_putchar('\\');
 			_putchar('x');
