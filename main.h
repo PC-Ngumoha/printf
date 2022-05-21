@@ -38,10 +38,14 @@ int _print_hexa_lower(va_list);
 int _print_octal(va_list);
 int _print_unsigned(va_list);
 
+/* Print addresses in hexadecimal format */
+int _print_address(va_list);
+
 /* Helper functions */
 void print_number(int n);
 int count_digits(int n);
 char *convert(unsigned int num, int base, int lowercase);
+char *convert_address(unsigned long num);
 
 /* Function Pointer Generator */
 int (*get_func(char c))(va_list);

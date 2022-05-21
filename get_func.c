@@ -19,6 +19,7 @@ int (*get_func(char c))(va_list)
 		{'o', _print_octal},
 		{'u', _print_unsigned},
 		{'S', _print_specifier},
+		{'p', _print_address},
 		{'\0', NULL}
 	};
 	int i = 0;
