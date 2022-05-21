@@ -6,10 +6,12 @@
  *
  * Return: length of number
  */
-int _print_binary(va_list valist)
+int _print_binary(va_list valist, flag_t f)
 {
 	unsigned int num = va_arg(valist, unsigned int);
 	char *str;
+
+	(void)f;
 
 	str = convert(num, 2, 1);
 	return (_puts(str));
@@ -21,7 +23,7 @@ int _print_binary(va_list valist)
  *
  * Return: length of number
  */
-int _print_hexa_upper(va_list valist)
+int _print_hexa_upper(va_list valist, flag_t f)
 {
 	unsigned int num = va_arg(valist, unsigned int);
 	char *str;
@@ -36,7 +38,7 @@ int _print_hexa_upper(va_list valist)
  *
  * Return: length of number
  */
-int _print_hexa_lower(va_list valist)
+int _print_hexa_lower(va_list valist, flag_t f)
 {
 	unsigned int num = va_arg(valist, unsigned int);
 	char *str;
@@ -51,7 +53,7 @@ int _print_hexa_lower(va_list valist)
  *
  * Return: length of number
  */
-int _print_octal(va_list valist)
+int _print_octal(va_list valist, flag_t f)
 {
 	unsigned int num = va_arg(valist, unsigned int);
 	char *str;
@@ -66,10 +68,12 @@ int _print_octal(va_list valist)
  *
  * Return: str array
  */
-int _print_unsigned(va_list valist)
+int _print_unsigned(va_list valist, flag_t f)
 {
 	unsigned int num = va_arg(valist, unsigned int);
 	char *str;
+
+	(void)f;
 
 	str = convert(num, 10, 1);
 	return (_puts(str));

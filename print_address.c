@@ -6,7 +6,7 @@
  *
  * Return: count
  */
-int _print_address(va_list valist)
+int _print_address(va_list valist, flag_t f)
 {
 	char *str;
 	int count = 0;
@@ -16,6 +16,8 @@ int _print_address(va_list valist)
 	{
 		return(_puts("(nil)"));
 	}
+
+	(void)f;
 
 	count += _putchar('0');
 	count += _putchar('x');

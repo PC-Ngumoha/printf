@@ -6,8 +6,10 @@
  *
  * Return: void
  */
-int _print_char(va_list valist)
+int _print_char(va_list valist, flag_t f)
 {
+	(void)f;
+
 	_putchar(va_arg(valist, int));
 	return (1);
 }
@@ -18,12 +20,13 @@ int _print_char(va_list valist)
  *
  * Return: void
  */
-int _print_str(va_list valist)
+int _print_str(va_list valist, flag_t f)
 {
 	char *str = va_arg(valist, char *);
 
 	if (!str)
 		str = "(null)";
+	(void)f;
 
 	return (_puts(str));
 }
@@ -34,7 +37,7 @@ int _print_str(va_list valist)
  *
  * Return: counts
  */
-int _print_specifier(va_list valist)
+int _print_specifier(va_list valist, flag_t f)
 {
 	int i;
 	int count = 0;
@@ -67,5 +70,6 @@ int _print_specifier(va_list valist)
 			count++;
 		}
 	}
+	(void)f;
 	return (count);
 }

@@ -6,7 +6,7 @@
  *
  * Return: Always (0);
  */
-int _print_dec(va_list valist)
+int _print_dec(va_list valist, flag_t f)
 {
 	int num = va_arg(valist, int);
 	int count = count_digits(num);
