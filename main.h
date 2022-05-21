@@ -44,8 +44,7 @@ int _print_address(va_list);
 /* Helper functions */
 void print_number(int n);
 int count_digits(int n);
-char *convert(unsigned int num, int base, int lowercase);
-char *convert_address(unsigned long num);
+char *convert(unsigned long num, int base, int lowercase);
 
 /* Function Pointer Generator */
 int (*get_func(char c))(va_list);

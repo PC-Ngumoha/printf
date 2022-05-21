@@ -8,7 +8,7 @@
  *
  * Return: ptr to beginning of string
  */
-char *convert(unsigned int num, int base, int lowercase)
+char *convert(unsigned long int num, int base, int lowercase)
 {
 	static char buffer[40];
 	static char *ptr;
