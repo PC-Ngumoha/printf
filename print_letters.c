@@ -9,7 +9,7 @@
 int _print_char(va_list valist)
 {
 	_putchar(va_arg(valist, int));
-	return (0);
+	return (1);
 }
 
 /**
@@ -26,15 +26,4 @@ int _print_str(va_list valist)
 		str = "(null)";
 
 	return (_puts(str));
-}
-
-/**
- * _print_percent - prints percent
- * @valist: parameter arg
- *
- * Return: Always the percent character
- */
-int _print_percent(va_list valist)
-{
-	return (_putchar('%'));
 }
