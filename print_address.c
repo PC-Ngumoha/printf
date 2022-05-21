@@ -20,7 +20,7 @@ int _print_address(va_list valist)
 	count += _putchar('0');
 	count += _putchar('x');
 	str = convert(addr, 16, 1);
-	count = count + _puts(str);
+	count += _puts(str);
 
 	return (count);
 }
