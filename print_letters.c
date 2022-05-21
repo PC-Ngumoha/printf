@@ -42,7 +42,10 @@ int _print_specifier(va_list valist)
 	char *str = va_arg(valist, char *);
 	
 	if (str == NULL)
+	{
 		str = "(null)";
+		_puts(str);
+	}
 
 	for (i = 0; str[i]; i++)
 	{
