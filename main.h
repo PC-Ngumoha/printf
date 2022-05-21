@@ -37,6 +37,7 @@ int _print_hexa_upper(va_list);
 int _print_hexa_lower(va_list);
 int _print_octal(va_list);
 int _print_unsigned(va_list);
+int _print_address(va_list);
 
 /* Print addresses in hexadecimal format */
 int _print_address(va_list);
