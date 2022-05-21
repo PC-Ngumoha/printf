@@ -29,7 +29,7 @@ int _print_str(va_list valist)
 }
 
 /**
- * _print_specifier - function to handle custom concersion specifier
+ * _print_specifier - function to handle custom conversion specifier
  * @valist: variable list of arguments
  *
  * Return: counts
@@ -40,10 +40,10 @@ int _print_specifier(va_list valist)
 	int count = 0;
 	char *hex;
 	char *str = va_arg(valist, char *);
-	
+
 	if (str == NULL)
 	{
-		str = "NULL";
+		str = "(null)";
 		_puts(str);
 	}
 
