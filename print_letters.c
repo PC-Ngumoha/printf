@@ -36,8 +36,8 @@ int _print_str(va_list valist)
  */
 int _print_specifier(va_list valist)
 {
-	unsigned int i;
-	int count;
+	int i;
+	int count = 0;
 	char *hex;
 	char *str = va_arg(valist, char *);
 	
@@ -53,9 +53,9 @@ int _print_specifier(va_list valist)
 			hex =  convert(str[i], 16, 0);
 			if (hex[0])
 			{
-				count += _putchar('0');
+				_putchar('0');
 			}
-				count += _puts(hex);
+				_puts(hex);
 			count = count + 4;
 		}
 		else
