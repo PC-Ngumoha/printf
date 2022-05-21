@@ -36,10 +36,11 @@ int _print_str(va_list valist)
  */
 int _print_specifier(va_list valist)
 {
-	int i;
+	unsigned int i;
 	int count;
+	char *hex;
 	char *str = va_arg(valist, char *);
-
+	
 	if (str == NULL)
 		str = "(null)";
 
@@ -49,7 +50,9 @@ int _print_specifier(va_list valist)
 		{
 			_putchar('\\');
 			_putchar('x');
-			count = count + 2;
+			hex =  convert(str[i], 16, 0);
+			count += _puts(hex);
+			count = count + 4;
 		}
 		else
 		{
@@ -58,4 +61,20 @@ int _print_specifier(va_list valist)
 		}
 	}
 	return (count);
+}
+
+int print_hexa(char c)
+{
+	int i;
+	char size[2];
+
+
+	size[0] = c / 16;
+	size[1] = c % 16;
+
+	for (i = 0; i < 2; i++)
+	{
+		_putchar('0' + size[i]);
+	}
+	return(0);
 }
