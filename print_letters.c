@@ -55,7 +55,7 @@ int _print_specifier(va_list valist)
 			{
 				_putchar('0');
 			}
-				_puts(hex);
+			_puts(hex);
 			count = count + 4;
 		}
 		else
