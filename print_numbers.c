@@ -24,19 +24,26 @@ int _print_dec(va_list valist)
  */
 void print_number(int n)
 {
+	unsigned int m; 
 	int temp;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		m = -n;
+	}
+	if (n => 0)
+	{
+		m = n;
 	}
 
-	temp = n % 10;
+	temp = m % 10;
 
-	if (n / 10)
+	if (m / 10)
+	{
 		print_number(n / 10);
 	_putchar('0' + temp);
+	}
 }
 
 
@@ -56,6 +63,7 @@ int count_digits(int n)
 	{
 		count_digits(n);
 	}
+
 	return (count);
 }
 
