@@ -25,14 +25,14 @@ int _print_dec(va_list valist)
 void print_number(int n)
 {
 	unsigned int m; 
-	int temp;
+	unsigned int temp;
 
 	if (n < 0)
 	{
 		_putchar('-');
 		m = -n;
 	}
-	if (n => 0)
+	else
 	{
 		m = n;
 	}
@@ -40,10 +40,8 @@ void print_number(int n)
 	temp = m % 10;
 
 	if (m / 10)
-	{
 		print_number(n / 10);
 	_putchar('0' + temp);
-	}
 }
 
 
