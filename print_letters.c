@@ -54,7 +54,7 @@ int _print_specifier(va_list valist)
 			_putchar('\\');
 			_putchar('x');
 			hex =  convert(str[i], 16, 0);
-			if (hex[0])
+			if (!hex[i])
 			{
 				_putchar('0');
 			}
