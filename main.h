@@ -42,7 +42,6 @@ int _print_unsigned(va_list);
 void print_number(int n);
 int count_digits(int n);
 char *convert(unsigned int num, int base, int lowercase);
-int _print_hexa(char c);
 
 /* Function Pointer Generator */
 int (*get_func(char c))(va_list);
