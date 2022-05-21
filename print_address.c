@@ -14,7 +14,7 @@ int _print_address(va_list valist)
 
 	if (!addr)
 	{
-		_puts("(nil)");
+		return(_puts("(nil)"));
 	}
 
 	_putchar('0');
