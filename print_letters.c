@@ -43,7 +43,7 @@ int _print_specifier(va_list valist)
 	
 	if (str == NULL)
 	{
-		str = "(null)";
+		str = "NULL";
 		_puts(str);
 	}
 
