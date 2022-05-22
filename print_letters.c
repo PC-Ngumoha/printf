@@ -49,27 +49,25 @@ int _print_specifier(va_list valist, flag_t *f)
 	if (str == NULL)
 	{
 		str = "(null)";
-		_puts(str);
+		return (_puts(str));
 	}
 
 	for (i = 0; str[i]; i++)
 	{
 		if (str[i] > 0 && (str[i] < 32 || str[i] >= 127))
 		{
-			_putchar('\\');
-			_putchar('x');
+			count += _putchar('\\');
+			count += _putchar('x');
 			hex =  convert(str[i], 16, 0);
 			if (!hex[1])
 			{
 				_putchar('0');
 			}
-			_puts(hex);
-			count = count + 4;
+			count += _puts(hex);
 		}
 		else
 		{
-			_putchar(str[i]);
-			count++;
+			count += _putchar(str[i]);
 		}
 	}
 	(void)f;
