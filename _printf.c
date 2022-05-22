@@ -22,16 +22,13 @@ int _printf(const char *format, ...)
 			str++;
 			if (*str == '%')
 			{
-				_putchar('%');
-				count++;
+				count += _putchar('%');
+				continue;
 			}
-			else
-			{
-				while (get_flags(*str, &f))
-					str++;
-				func = get_func(*str);
-				count += func(args, &f);
-			}
+			while (get_flags(*str, &f))
+				str++;
+			func = get_func(*str);
+			count += func(args, &f);
 		}
 		else
 		{
