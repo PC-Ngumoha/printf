@@ -24,7 +24,6 @@ int _putchar(char c)
 	return (1);
 }
 
-
 /**
  * _puts - Helps print a string to the terminal
  * @str: string parameter
