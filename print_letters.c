@@ -9,7 +9,7 @@
  */
 int _print_char(va_list valist, flag_t *f)
 {
-	char ch = (char)(va_arg(valist, int));
+	char ch = (char)va_arg(valist, int);
 
 	(void)f;
 	_putchar(ch);
