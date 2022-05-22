@@ -32,10 +32,10 @@ int _print_hexa_upper(va_list valist, flag_t *f)
 
 	register int count = 0;
 
-	if (f->hash)
+	str = convert(num, 16, 0);
+	if (f->hash && str[0] != '0')
 		count += _puts("0X");
 
-	str = convert(num, 16, 0);
 	count += _puts(str);
 	return (count);
 }
@@ -54,10 +54,10 @@ int _print_hexa_lower(va_list valist, flag_t *f)
 
 	register int count = 0;
 
-	if (f->hash)
+	str = convert(num, 16, 1);
+	if (f->hash && str[0] != '0')
 		count += _puts("0x");
 
-	str = convert(num, 16, 1);
 	count += _puts(str);
 	return (count);
 }
@@ -76,10 +76,11 @@ int _print_octal(va_list valist, flag_t *f)
 
 	register int count = 0;
 
-	if (f->hash)
+	str = convert(num, 8, 1);
+
+	if (f->hash && str[0] != '0')
 		count += _putchar('0');
 
-	str = convert(num, 8, 1);
 	count += _puts(str);
 	return (count);
 }

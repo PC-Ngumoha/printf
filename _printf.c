@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	const char *str;
 	int (*func)(va_list, flag_t *);
 	flag_t f = {0, 0, 0};
-	
+
 	register int count = 0;
 
 	va_start(args, format);
@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 			while (get_flags(*str, &f))
 				str++;
 			func = get_func(*str);
-			count += (func) ? func(args, &f) : _printf("%%%c", *str);
+			count += func(args, &f);
 		}
 		else
 			count += _putchar(*str);
