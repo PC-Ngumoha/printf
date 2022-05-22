@@ -33,7 +33,7 @@ int _printf(const char *format, ...)
 			while (get_flags(*str, &f))
 				str++;
 			func = get_func(*str);
-			count += (func) ? func(args, &f) : _printf("%%%c", *str);
+			count += func(args, &f);
 		}
 		else
 			count += _putchar(*str);
