@@ -7,13 +7,6 @@
 #include <limits.h>
 #include <unistd.h>
 
-/* identifiers struct */
-typedef struct identifiers
-{
-	char symbol;
-	int (*func)(va_list, flag_t);
-} id;
-
 /* Flags struct */
 typedef struct flags
 {
@@ -21,6 +14,14 @@ typedef struct flags
 	int space;
 	int hash;
 }flag_t;
+
+/* identifiers struct */
+typedef struct identifiers
+{
+	char symbol;
+	int (*func)(va_list, flag_t *);
+} id;
+
 
 
 /* Write functions*/
@@ -32,23 +33,23 @@ int _puts(char *str);
 int _printf(const char *format, ...);
 
 /* Print character functions */
-int _print_char(va_list, flag_t);
-int _print_str(va_list, flag_t);
-int _print_specifier(va_list, flag_t);
+int _print_char(va_list, flag_t *);
+int _print_str(va_list, flag_t *);
+int _print_specifier(va_list, flag_t *);
 
 /* Print numbers in decimal */
-int  _print_dec(va_list, flag_t);
+int  _print_dec(va_list, flag_t *);
 
 /* Print numbers in other bases */
-int _print_binary(va_list, flag_t);
-int _print_hexa_upper(va_list, flag_t);
-int _print_hexa_lower(va_list, flag_t);
-int _print_octal(va_list, flag_t);
-int _print_unsigned(va_list, flag_t);
-int _print_address(va_list, flag_t);
+int _print_binary(va_list, flag_t *);
+int _print_hexa_upper(va_list, flag_t *);
+int _print_hexa_lower(va_list, flag_t *);
+int _print_octal(va_list, flag_t *);
+int _print_unsigned(va_list, flag_t *);
+int _print_address(va_list, flag_t *);
 
 /* Print addresses in hexadecimal format */
-int _print_address(va_list, flag_t);
+int _print_address(va_list, flag_t *);
 
 /* Helper functions */
 void print_number(int n);
@@ -56,9 +57,9 @@ int count_digits(int n);
 char *convert(unsigned long num, int base, int lowercase);
 
 /* Function Pointer Generator */
-int (*get_func(char c))(va_list);
+int (*get_func(char c))(va_list, flag_t *);
 
 /* Sets flags */
-int get_flags(flag_t);
+int get_flags(char elem, flag_t *);
 
 #endif /* MAIN_H_ */

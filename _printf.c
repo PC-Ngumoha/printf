@@ -11,11 +11,11 @@ int _printf(const char *format, ...)
 	register int count = 0;
 	va_list args;
 	const char *str;
-	int (*func)(va_list);
+	int (*func)(va_list, flag_t *);
+	flag_t f = {0, 0, 0};
 
 	va_start(args, format);
-	str = format;
-	while (*str)
+	for (str = format; *str; str++)
 	{
 		if (*str == '%')
 		{
@@ -27,22 +27,16 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
+				while (get_flags(*str, &f))
+					str++;
 				func = get_func(*str);
-				if (!func)
-				{
-					_putchar(*str);
-					count++;
-				}
-				else
-					count += func(args);
+				count += func(args, &f);
 			}
 		}
 		else
 		{
-			_putchar(*str);
-			count++;
+			count += _putchar(*str);
 		}
-		str++;
 	}
 	_putchar(-1);
 	va_end(args);

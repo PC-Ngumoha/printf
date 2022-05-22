@@ -3,13 +3,24 @@
 /**
  * _print_dec - prints decimal numbers to the screen
  * @valist: variable list of arguments
+ * @f: pointer to flag_t
  *
  * Return: Always (0);
  */
-int _print_dec(va_list valist, flag_t f)
+int _print_dec(va_list valist, flag_t *f)
 {
 	int num = va_arg(valist, int);
-	int count = count_digits(num);
+
+	register int count = 0;
+
+	count = count_digits(num);
+
+	if (f->space && !f->plus && num >= 0)
+		count += _putchar(' ');
+	if (f->plus && num >= 0)
+		count += _putchar('+');
+	if (num <= 0)
+		count++;
 
 	print_number(num);
 	return (count);
@@ -24,19 +35,23 @@ int _print_dec(va_list valist, flag_t f)
  */
 void print_number(int n)
 {
-	int temp;
+
+	unsigned int m;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		m = -n;
+	}
+	else
+	{
+		m = n;
 	}
 
-	temp = n % 10;
 
-	if (n / 10)
-		print_number(n / 10);
-	_putchar('0' + temp);
+	if (m / 10)
+		print_number(m / 10);
+	_putchar('0' + (m % 10));
 }
 
 
@@ -48,14 +63,16 @@ void print_number(int n)
  */
 int count_digits(int n)
 {
-	static int count;
+	int count = 0;
 
-	n = n / 10;
-	count++;
-	if (n)
-	{
-		count_digits(n);
-	}
+	if (n < 0)
+		n = (-1 * n);
+	else
+		n = n;
+	do {
+		n = n / 10;
+		count++;
+	} while (n != 0);
 	return (count);
 }
 

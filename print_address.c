@@ -3,10 +3,11 @@
 /**
  * _print_address - function to print address
  * @valist: variable arguments
+ * @f: pointer to flag_t
  *
  * Return: count
  */
-int _print_address(va_list valist, flag_t f)
+int _print_address(va_list valist, flag_t *f)
 {
 	char *str;
 	int count = 0;
@@ -14,7 +15,7 @@ int _print_address(va_list valist, flag_t f)
 
 	if (!addr)
 	{
-		return(_puts("(nil)"));
+		return (_puts("(nil)"));
 	}
 
 	(void)f;
