@@ -9,8 +9,10 @@
  */
 int _print_char(va_list valist, flag_t *f)
 {
+	char ch = (char)(va_arg(valist, int));
+
 	(void)f;
-	_putchar(va_arg(valist, int));
+	_putchar(ch);
 	return (1);
 }
 
