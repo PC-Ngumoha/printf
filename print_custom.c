@@ -45,7 +45,7 @@ int _print_specifier(va_list valist, flag_t *f)
 			hex =  convert(str[i], 16, 0);
 			if (!hex[1])
 			{
-				count += _putchar('0');	
+				count += _putchar('0');
 			}
 			count += _puts(hex);
 		}
