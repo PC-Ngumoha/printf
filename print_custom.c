@@ -45,7 +45,7 @@ int _print_specifier(va_list valist, flag_t *f)
 			hex =  convert(str[i], 16, 0);
 			if (!hex[1])
 			{
-				count += _putchar('0');	
+				count += _putchar('0');
 			}
 			count += _puts(hex);
 		}
@@ -55,3 +55,31 @@ int _print_specifier(va_list valist, flag_t *f)
 	(void)f;
 	return (count);
 }
+
+
+/**
+ * _print_reverse - prints a string in reverse
+ * @valist: va_list parameter
+ * @f: pointer to flag_t
+ *
+ * Return: count of characters in the string
+ */
+int _print_reverse(va_list valist, flag_t *f)
+{
+	char *str = va_arg(valist, char *);
+	int i = 0, j;
+
+	(void)f;
+
+	if (!str)
+		return (_puts("(null)"));
+
+	while (str[i])
+		i++;
+	for (j = i - 1; j >= 0; j--)
+		_putchar(str[j]);
+
+	return (i);
+}
+
+
