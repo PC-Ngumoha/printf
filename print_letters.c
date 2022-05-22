@@ -10,7 +10,6 @@
 int _print_char(va_list valist, flag_t *f)
 {
 	(void)f;
-
 	_putchar(va_arg(valist, int));
 	return (1);
 }
@@ -30,6 +29,5 @@ int _print_str(va_list valist, flag_t *f)
 
 	if (!str)
 		str = "(null)";
-
 	return (_puts(str));
 }
