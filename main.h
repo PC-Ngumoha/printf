@@ -51,6 +51,9 @@ int _print_address(va_list, flag_t *);
 /* Print addresses in hexadecimal format */
 int _print_address(va_list, flag_t *);
 
+/* Print custom */
+int _print_percent(va_list, flag_t *);
+
 /* Helper functions */
 void print_number(int n);
 int count_digits(int n);

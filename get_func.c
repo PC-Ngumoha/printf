@@ -20,17 +20,15 @@ int (*get_func(char c))(va_list, flag_t *)
 		{'u', _print_unsigned},
 		{'S', _print_specifier},
 		{'p', _print_address},
-		{'\0', NULL}
+		{'%', _print_percent}
 	};
-	int i = 0;
+	int i;
+	int flags = 12;
 
-	while (char_ids[i].symbol != '\0')
-	{
+
+	for (i = 0; i < flags; i++)
 		if (char_ids[i].symbol == c)
-		{
 			return (char_ids[i].func);
-		}
-		i++;
-	}
+
 	return (NULL);
 }
