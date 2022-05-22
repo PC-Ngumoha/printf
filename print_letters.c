@@ -13,7 +13,7 @@ int _print_char(va_list valist, flag_t *f)
 
 	(void)f;
 
-		_putchar(ch);
+	_putchar(ch);
 	
 	return (1);
 }
