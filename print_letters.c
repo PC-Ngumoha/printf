@@ -9,9 +9,12 @@
  */
 int _print_char(va_list valist, flag_t *f)
 {
+	char ch = (char)va_arg(valist, int);
+
 	(void)f;
 
-	_putchar(va_arg(valist, int));
+		_putchar(ch);
+	
 	return (1);
 }
 
@@ -20,7 +23,7 @@ int _print_char(va_list valist, flag_t *f)
  * @valist: variable list of arguments
  * @f: pointer to flag_t
  *
- * Return: void
+ * Return: number of character
  */
 int _print_str(va_list valist, flag_t *f)
 {
@@ -30,6 +33,5 @@ int _print_str(va_list valist, flag_t *f)
 
 	if (!str)
 		str = "(null)";
-
 	return (_puts(str));
 }

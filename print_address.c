@@ -20,8 +20,9 @@ int _print_address(va_list valist, flag_t *f)
 
 	(void)f;
 
-	count += _putchar('0');
-	count += _putchar('x');
+	_putchar('0');
+	_putchar('x');
+	count = 2;
 	str = convert(addr, 16, 1);
 	count += _puts(str);
 

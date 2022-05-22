@@ -18,7 +18,6 @@ int _print_dec(va_list valist, flag_t *f)
 		count += _putchar('+');
 	if (num <= 0)
 		count++;
-
 	print_number(num);
 	return (count);
 }
@@ -44,7 +43,6 @@ void print_number(int n)
 	{
 		m = n;
 	}
-
 
 	if (m / 10)
 		print_number(m / 10);
