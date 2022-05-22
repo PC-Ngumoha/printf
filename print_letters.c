@@ -21,7 +21,7 @@ int _print_char(va_list valist, flag_t *f)
  * @valist: variable list of arguments
  * @f: pointer to flag_t
  *
- * Return: void
+ * Return: number of character
  */
 int _print_str(va_list valist, flag_t *f)
 {
