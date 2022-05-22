@@ -12,9 +12,9 @@ int _print_dec(va_list valist, flag_t *f)
 	int num = va_arg(valist, int);
 	int count = count_digits(num);
 
-	if (f->space && !f->plus && num >= 0)
+	if (f->space == 1 && f->plus == 0 && num >= 0)
 		count += _putchar(' ');
-	if (f->plus && num >= 0)
+	if (f->plus == 1 && num >= 0)
 		count += _putchar('+');
 	if (num <= 0)
 		count++;
