@@ -10,10 +10,7 @@
 int _print_dec(va_list valist, flag_t *f)
 {
 	int num = va_arg(valist, int);
-
-	register int count = 0;
-
-	count = count_digits(num);
+	int count = count_digits(num);
 
 	if (f->space && !f->plus && num >= 0)
 		count += _putchar(' ');
@@ -63,16 +60,18 @@ void print_number(int n)
  */
 int count_digits(int n)
 {
-	int count = 0;
+	unsigned int count = 0;
+	unsigned int m;
 
 	if (n < 0)
-		n = (-1 * n);
+		m = (-1 * n);
 	else
-		n = n;
-	do {
-		n = n / 10;
+		m = n;
+	while (m != 0)
+	{
+		m /= 10;
 		count++;
-	} while (n != 0);
+	}
 	return (count);
 }
 

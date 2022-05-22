@@ -28,11 +28,10 @@ int _print_binary(va_list valist, flag_t *f)
 int _print_hexa_upper(va_list valist, flag_t *f)
 {
 	unsigned int num = va_arg(valist, unsigned int);
-	char *str;
+	char *str = convert(num, 16, 0);
 
 	register int count = 0;
 
-	str = convert(num, 16, 0);
 	if (f->hash && str[0] != '0')
 		count += _puts("0X");
 
@@ -50,11 +49,10 @@ int _print_hexa_upper(va_list valist, flag_t *f)
 int _print_hexa_lower(va_list valist, flag_t *f)
 {
 	unsigned int num = va_arg(valist, unsigned int);
-	char *str;
+	char *str = convert(num, 16, 1);
 
 	register int count = 0;
 
-	str = convert(num, 16, 1);
 	if (f->hash && str[0] != '0')
 		count += _puts("0x");
 
@@ -72,11 +70,10 @@ int _print_hexa_lower(va_list valist, flag_t *f)
 int _print_octal(va_list valist, flag_t *f)
 {
 	unsigned int num = va_arg(valist, unsigned int);
-	char *str;
+	char *str = convert(num, 8, 1);
 
 	register int count = 0;
 
-	str = convert(num, 8, 1);
 
 	if (f->hash && str[0] != '0')
 		count += _putchar('0');
