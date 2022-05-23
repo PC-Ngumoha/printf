@@ -11,9 +11,16 @@
 int _print_char(va_list valist, flag_t *f, mod_t *m)
 {
 	char ch = (char)va_arg(valist, int);
+	int spaces, i;
 
 	(void)f;
-	(void)m;
+
+	if (m->width > 0)
+	{
+		spaces = m->width - 1;
+		for (i = 0; i < spaces; i++)
+			_putchar(' ');
+	}
 
 	_putchar(ch);
 
@@ -31,11 +38,20 @@ int _print_char(va_list valist, flag_t *f, mod_t *m)
 int _print_str(va_list valist, flag_t *f, mod_t *m)
 {
 	char *str = va_arg(valist, char *);
+	int i, spaces, count = 0;
 
 	(void)f;
-	(void)m;
 
 	if (!str)
 		str = "(null)";
-	return (_puts(str));
+	while (str[count] != '\0')
+		count++;
+	if (m->width > count)
+	{
+		spaces = m->width - count;
+		for (i = 0; i < spaces; i++)
+			_putchar(' ');
+	}
+	_puts(str);
+	return (count);
 }

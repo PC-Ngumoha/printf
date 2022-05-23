@@ -24,3 +24,20 @@ int get_modifier(char elem, mod_t *m)
 	}
 	return (i);
 }
+
+/**
+ * get_width - determines the value of the specified width
+ * @str: string parameter
+ * @m: pointer to mod_t struct
+ *
+ * Return: void
+ */
+void get_width(char *str, mod_t *m)
+{
+	int i, num = 0;
+
+	for (i = 0; str[i] != '\0'; i++)
+		num = (num * (i * 10)) + (str[i] - '0');
+	if (num >= 0)
+		m->width = num;
+}

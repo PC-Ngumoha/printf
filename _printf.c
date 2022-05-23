@@ -12,9 +12,9 @@ int _printf(const char *format, ...)
 	const char *str;
 	int (*func)(va_list, flag_t *, mod_t *);
 	flag_t f = {0, 0, 0};
-	mod_t m = {0, 0};
-
-	register int count = 0;
+	mod_t m = {0, 0, 0};
+	int size, count = 0;
+	char width[10] = "";
 
 	va_start(args, format);
 	if (!format || (format[0] == '%' && !format[1]))
@@ -31,18 +31,23 @@ int _printf(const char *format, ...)
 				count += _putchar('%');
 				continue;
 			}
-			while (get_flags(*str, &f))
-				str++;
-			while (get_modifier(*str, &m))
-				str++;
+			for (; get_flags(*str, &f); str++)
+			{}
+			for (size = 0; *str >= 48 && *str <= 57; str++)
+			{
+				width[size] = *str;
+				size++;
+			}
+			width[size] = '\0';
+			get_width(width, &m);
+			for (; get_modifier(*str, &m); str++)
+			{}
 			func = get_func(*str);
 			count += (func) ? func(args, &f, &m)
 					: _printf("%%%c", *str);
-		}
-		else
+		} else
 			count += _putchar(*str);
 	}
-	_putchar(-1);
-	va_end(args);
+	_putchar(-1), va_end(args);
 	return (count);
 }
