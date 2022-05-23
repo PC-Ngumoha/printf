@@ -82,4 +82,41 @@ int _print_reverse(va_list valist, flag_t *f)
 	return (i);
 }
 
+/**
+ * _print_rot13 - prints the rot13 encoding of certain letters
+ * @valist: va_list parameter
+ * @f: pointer to flag_t
+ *
+ * Return: count of characters
+ */
+int _print_rot13(va_list valist, flag_t *f)
+{
+	char *str = va_arg(valist, char *);
+	char *input = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char *output = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	int i, j;
+
+
+	(void)f;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if ((str[i] < 65 || str[i] > 90) && (str[i] < 97 || str[i] > 122))
+			_putchar(str[i]);
+		else
+		{
+			for (j = 0; j < 52; j++)
+			{
+				if (input[j] == str[i])
+					_putchar(output[j]);
+			}
+		}
+	}
+	return (i);
+}
+
+
+
+
+
 

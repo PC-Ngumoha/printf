@@ -21,10 +21,11 @@ int (*get_func(char c))(va_list, flag_t *)
 		{'S', _print_specifier},
 		{'p', _print_address},
 		{'%', _print_percent},
-		{'r', _print_reverse}
+		{'r', _print_reverse},
+		{'R', _print_rot13}
 	};
 	int i;
-	int flags = 13;
+	int flags = 14;
 
 
 	for (i = 0; i < flags; i++)
