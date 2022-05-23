@@ -4,21 +4,36 @@
  * _print_dec - prints decimal numbers to the screen
  * @valist: variable list of arguments
  * @f: pointer to flag_t
+ * @m: pointer to mod_t
  *
  * Return: Always (0);
  */
-int _print_dec(va_list valist, flag_t *f)
+int _print_dec(va_list valist, flag_t *f, mod_t *m)
 {
-	int num = va_arg(valist, int);
-	int count = count_digits(num);
+	long lnum = va_arg(valist, long);
+	int count, num = 0;
+	short snum = 0;
 
-	if (f->space == 1 && f->plus == 0 && num >= 0)
+	if (m->l == 0 && m->h == 1)
+	{
+		snum = (short) lnum;
+		lnum = snum;
+	}
+	if (m->l == 0 && m->h == 0)
+	{
+		num = (int) lnum;
+		lnum = num;
+	}
+
+	count = count_digits(lnum);
+
+	if (f->space == 1 && f->plus == 0 && lnum >= 0)
 		count += _putchar(' ');
-	if (f->plus == 1 && num >= 0)
+	if (f->plus == 1 && lnum >= 0)
 		count += _putchar('+');
-	if (num <= 0)
+	if (lnum <= 0)
 		count++;
-	print_number(num);
+	print_number(lnum);
 	return (count);
 }
 
@@ -29,10 +44,10 @@ int _print_dec(va_list valist, flag_t *f)
  *
  * Return: void
  */
-void print_number(int n)
+void print_number(long n)
 {
 
-	unsigned int m;
+	unsigned long m;
 
 	if (n < 0)
 	{
@@ -56,10 +71,10 @@ void print_number(int n)
  *
  * Return: number of digits
  */
-int count_digits(int n)
+int count_digits(long n)
 {
 	unsigned int count = 0;
-	unsigned int m;
+	unsigned long m;
 
 	if (n < 0)
 		m = (-1 * n);

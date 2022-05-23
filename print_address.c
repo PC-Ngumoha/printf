@@ -4,10 +4,11 @@
  * _print_address - function to print address
  * @valist: variable arguments
  * @f: pointer to flag_t
+ * @m: pointer to mod_t
  *
  * Return: count
  */
-int _print_address(va_list valist, flag_t *f)
+int _print_address(va_list valist, flag_t *f, mod_t *m)
 {
 	char *str;
 	int count = 0;
@@ -19,6 +20,7 @@ int _print_address(va_list valist, flag_t *f)
 	}
 
 	(void)f;
+	(void)m;
 
 	count += _putchar('0');
 	count += _putchar('x');

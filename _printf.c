@@ -10,8 +10,9 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	const char *str;
-	int (*func)(va_list, flag_t *);
+	int (*func)(va_list, flag_t *, mod_t *);
 	flag_t f = {0, 0, 0};
+	mod_t m = {0, 0};
 
 	register int count = 0;
 
@@ -32,8 +33,11 @@ int _printf(const char *format, ...)
 			}
 			while (get_flags(*str, &f))
 				str++;
+			while (get_modifier(*str, &m))
+				str++;
 			func = get_func(*str);
-			count += (func) ? func(args, &f) : _printf("%%%c", *str);
+			count += (func) ? func(args, &f, &m)
+					: _printf("%%%c", *str);
 		}
 		else
 			count += _putchar(*str);

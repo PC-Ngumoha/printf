@@ -6,7 +6,7 @@
  *
  * Return: pointer to function
  */
-int (*get_func(char c))(va_list, flag_t *)
+int (*get_func(char c))(va_list, flag_t *, mod_t *)
 {
 	id char_ids[] = {
 		{'d', _print_dec},

@@ -4,13 +4,15 @@
  * _print_percent - prints a percent out to the screen
  * @valist: va_list parameter
  * @f: pointer to flag_t
+ * @m: pointer to mod_t
  *
  * Return: number of characters
  */
-int _print_percent(va_list valist, flag_t *f)
+int _print_percent(va_list valist, flag_t *f, mod_t *m)
 {
 	(void)valist;
 	(void)f;
+	(void)m;
 	return (_putchar('%'));
 }
 
@@ -19,10 +21,11 @@ int _print_percent(va_list valist, flag_t *f)
  * _print_specifier - function to handle custom conversion specifier
  * @valist: variable list of arguments
  * @f: pointer to flag_t
+ * @m: pointer to mod_t
  *
  * Return: counts of characters
  */
-int _print_specifier(va_list valist, flag_t *f)
+int _print_specifier(va_list valist, flag_t *f, mod_t *m)
 {
 	int i;
 	int count = 0;
@@ -53,6 +56,7 @@ int _print_specifier(va_list valist, flag_t *f)
 			count += _putchar(str[i]);
 	}
 	(void)f;
+	(void)m;
 	return (count);
 }
 
@@ -61,15 +65,17 @@ int _print_specifier(va_list valist, flag_t *f)
  * _print_reverse - prints a string in reverse
  * @valist: va_list parameter
  * @f: pointer to flag_t
+ * @m: pointer to mod_t
  *
  * Return: count of characters in the string
  */
-int _print_reverse(va_list valist, flag_t *f)
+int _print_reverse(va_list valist, flag_t *f, mod_t *m)
 {
 	char *str = va_arg(valist, char *);
 	int i = 0, j;
 
 	(void)f;
+	(void)m;
 
 	if (!str)
 		return (_puts("(null)"));
@@ -86,10 +92,11 @@ int _print_reverse(va_list valist, flag_t *f)
  * _print_rot13 - prints the rot13 encoding of certain letters
  * @valist: va_list parameter
  * @f: pointer to flag_t
+ * @m: pointer to mod_t
  *
  * Return: count of characters
  */
-int _print_rot13(va_list valist, flag_t *f)
+int _print_rot13(va_list valist, flag_t *f, mod_t *m)
 {
 	char *str = va_arg(valist, char *);
 	char *input = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -98,6 +105,7 @@ int _print_rot13(va_list valist, flag_t *f)
 
 
 	(void)f;
+	(void)m;
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
@@ -114,9 +122,3 @@ int _print_rot13(va_list valist, flag_t *f)
 	}
 	return (i);
 }
-
-
-
-
-
-
