@@ -13,8 +13,7 @@ int _printf(const char *format, ...)
 	int (*func)(va_list, flag_t *, mod_t *);
 	flag_t f = {0, 0, 0};
 	mod_t m = {0, 0, 0};
-	int size, count = 0;
-	char width[10] = "";
+	int i, count = 0, num = 0;
 
 	va_start(args, format);
 	if (!format || (format[0] == '%' && !format[1]))
@@ -33,13 +32,9 @@ int _printf(const char *format, ...)
 			}
 			for (; get_flags(*str, &f); str++)
 			{}
-			for (size = 0; *str >= 48 && *str <= 57; str++)
-			{
-				width[size] = *str;
-				size++;
-			}
-			width[size] = '\0';
-			get_width(width, &m);
+			for (i = 0; *str >= 48 && *str <= 57; str++, i++)
+				num = (num * (i * 10)) + (*str - '0');
+			set_width(num, &m);
 			for (; get_modifier(*str, &m); str++)
 			{}
 			func = get_func(*str);

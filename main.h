@@ -78,6 +78,6 @@ int get_flags(char elem, flag_t *);
 
 /* Sets the modifiers */
 int get_modifier(char elem, mod_t *);
-void get_width(char *str, mod_t *);
+void set_width(int width, mod_t *);
 
 #endif /* MAIN_H_ */
