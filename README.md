@@ -1,6 +1,6 @@
 # printf
 
-ALX SE team project (Chukwuemeka Ngumoha, Chinazaekpere Nnaji) focused on implementing a replica of the standard printf function used in the C programming language. This is about owning your own printf function and being able to use it in place of the standard printf function.
+ALX SE team project (Chinazaekpere Nnaji, Chukwuemeka Ngumoha) focused on implementing a replica of the standard printf function used in the C programming language. This is about owning your own printf function and being able to use it in place of the standard printf function.
 
 ## Program Files in This Project
 
