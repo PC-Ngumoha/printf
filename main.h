@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <limits.h>
 #include <unistd.h>
+#include <string.h>
 
 /* Flags struct */
 typedef struct flags
@@ -20,6 +21,7 @@ typedef struct modifiers
 {
 	int l;
 	int h;
+	int width;
 } mod_t;
 
 /* identifiers struct */
@@ -73,6 +75,9 @@ int (*get_func(char c))(va_list, flag_t *, mod_t *);
 
 /* Sets flags */
 int get_flags(char elem, flag_t *);
+
+/* Sets the modifiers */
 int get_modifier(char elem, mod_t *);
+void set_width(int width, mod_t *);
 
 #endif /* MAIN_H_ */

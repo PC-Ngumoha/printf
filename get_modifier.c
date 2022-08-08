@@ -24,3 +24,16 @@ int get_modifier(char elem, mod_t *m)
 	}
 	return (i);
 }
+
+/**
+ * set_width - sets the width attribute of the mod_t struct
+ * @width: int parameter
+ * @m: pointer to mod_t struct
+ *
+ * Return: void
+ */
+void set_width(int width, mod_t *m)
+{
+	if (width >= 0)
+		m->width = width;
+}

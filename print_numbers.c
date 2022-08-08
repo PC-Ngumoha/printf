@@ -13,6 +13,7 @@ int _print_dec(va_list valist, flag_t *f, mod_t *m)
 	long lnum = va_arg(valist, long);
 	int count, num = 0;
 	short snum = 0;
+	int spaces, i;
 
 	if (m->l == 0 && m->h == 1)
 	{
@@ -24,9 +25,13 @@ int _print_dec(va_list valist, flag_t *f, mod_t *m)
 		num = (int) lnum;
 		lnum = num;
 	}
-
 	count = count_digits(lnum);
-
+	if (m->width > count)
+	{
+		spaces = m->width - count;
+		for (i = 0; i < spaces; i++)
+			_putchar(' ');
+	}
 	if (f->space == 1 && f->plus == 0 && lnum >= 0)
 		count += _putchar(' ');
 	if (f->plus == 1 && lnum >= 0)
